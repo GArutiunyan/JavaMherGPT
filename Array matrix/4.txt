@@ -1,0 +1,23 @@
+import java.lang.reflect.Array;
+import java.nio.charset.IllegalCharsetNameException;
+import java.util.Arrays;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int[] a = new int[]{1, 3, 1, 7, 2, 6, 23, 5, 3, 2};
+        int s = a.length;
+        int[] b = new int[s];
+        for (int i = s;i>0;i--){
+            b[s-i]=a[i-1];
+        }
+
+        for (int i = 0; i < s; i++){
+            System.out.print(a[i]+" ");
+        }
+        System.out.println();
+        for (int i = 0; i < s; i++){
+            System.out.print(b[i]+" ");
+        }
+    }
+}
