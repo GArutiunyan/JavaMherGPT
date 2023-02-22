@@ -1,0 +1,61 @@
+
+class Vehicle{
+    private String type,color;
+
+    public Vehicle(String type, String color) {
+        this.type = type;
+        this.color = color;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+
+class Car extends Vehicle{
+    private int numberOfDoors;
+
+    public Car(String type, String color, int numberOfDoors) {
+        super(type, color);
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    public int getNumberOfDoors() {
+        return numberOfDoors;
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfDoors = numberOfDoors;
+    }
+
+    @Override
+    public String toString() {
+        return ""+ numberOfDoors+" doors "+super.toString();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Car c = new Car("Fast","Red",0);
+        System.out.println(c);
+    }
+}

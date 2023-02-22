@@ -1,0 +1,62 @@
+
+class Shape{
+    private String type,color;
+
+    public Shape(String type, String color) {
+        this.type = type;
+        this.color = color;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Shape{" +
+                "type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+class Squere extends Shape{
+    int sideLength;
+
+    public Squere(String type, String color, int sideLength) {
+        super(type, color);
+        this.sideLength = sideLength;
+    }
+
+    public int getSideLength() {
+        return sideLength;
+    }
+
+    public void setSideLength(int sideLength) {
+        this.sideLength = sideLength;
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+ "Squere{" +
+                "sideLength=" + sideLength +
+                '}';
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Squere s = new Squere("Dgwrg","White",100);
+        System.out.println(s);
+    }
+}

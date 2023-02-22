@@ -1,0 +1,61 @@
+
+class Vehicle{
+    private String type,color;
+
+    public Vehicle(String type, String color) {
+        this.type = type;
+        this.color = color;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    @Override
+    public String toString() {
+        return "Vehicle{" +
+                "type='" + type + '\'' +
+                ", color='" + color + '\'' +
+                '}';
+    }
+}
+
+class Motorcycle extends Vehicle{
+    private int numberOfWheels;
+
+    public Motorcycle(String type, String color, int numberOfDoors) {
+        super(type, color);
+        this.numberOfWheels = numberOfDoors;
+    }
+
+    public int getNumberOfDoors() {
+        return numberOfWheels;
+    }
+
+    public void setNumberOfDoors(int numberOfDoors) {
+        this.numberOfWheels = numberOfDoors;
+    }
+
+    @Override
+    public String toString() {
+        return ""+ numberOfWheels+" wheels "+super.toString();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        Motorcycle c = new Motorcycle("Small","Green",2);
+        System.out.println(c);
+    }
+}
