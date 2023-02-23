@@ -1,0 +1,15 @@
+import java.lang.reflect.Array;
+import java.nio.charset.IllegalCharsetNameException;
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        float[] a = new float[]{1.1F, 3.8F, 1.2F, 1.4F,9.1F, 2.6F, 6.0F, 23.4F, 5.2F, 3.5F, 2.6F};
+        float ans = 0;
+        for (int i = 0; i < a.length; i++){
+            ans+=a[i];
+        }
+        ans/=a.length;
+        System.out.println(ans);
+    }
+}
