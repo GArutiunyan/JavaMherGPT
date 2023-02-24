@@ -1,0 +1,66 @@
+class BankAccount{
+    private int accountNumber;
+    private double balance;
+
+    public BankAccount(int accountNumber, int balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
+    }
+
+    public int getAccountNumber() {
+        return accountNumber;
+    }
+
+    public void setAccountNumber(int accountNumber) {
+        this.accountNumber = accountNumber;
+    }
+
+    public void deposit(double amount){
+        balance+=amount;
+    }
+    public double getBalance() {
+        return balance;
+    }
+
+    public void setBalance(double balance) {
+        this.balance = balance;
+    }
+
+    @Override
+    public String toString() {
+        return "accountNumber=№" + accountNumber + ", balance=" + balance+"$";
+    }
+}
+
+class SavingsAccount extends BankAccount{
+    private static int interestRate = 100;
+
+    public SavingsAccount(int accountNumber, int balance) {
+        super(accountNumber, balance);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString()+", interest rate: "+interestRate+"%";
+    }
+
+    public void compoundInterest(int years){
+        double x = ((double)interestRate)/100;
+        for (int i = 0; i < years; i++){
+            deposit(getBalance()*x);
+        }
+    }
+
+    public String superToString() {
+        return super.toString();
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        SavingsAccount savingsAccount = new SavingsAccount(10021,100000);
+        System.out.println(savingsAccount);
+        savingsAccount.compoundInterest(3);
+        System.out.println(savingsAccount);
+        System.out.println(savingsAccount.superToString());
+    }
+}
